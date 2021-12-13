@@ -157,7 +157,7 @@ function blockSort(input, sortby, descend) {
         descend = sortby;
         sortby = 0;
     }
-    if (Array.isArray(array[0]) && typeof sortby !== 'number') sortby = 0;
+    if (Array.isArray(array[0]) && !(typeof sortby === 'number' || typeof sortby === 'string')) sortby = 0;
     if (typeof array[0] !== 'object') sortby = undefined;
     let arrSize = array.length;
     let finalArray = [];
